@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 //react icons
@@ -93,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile menu panel */}
       <div
-        className={`fixed right-0 top-0 h-full w-full bg-neutral-900 shadow-xl transition-transform duration-300 ease-in-out transform lg:hidden ${
+        className={`fixed right-0 top-0 h-full w-full bg-neutral-900 shadow-xl transition-transform duration-300 ease-in-out transform lg:hidden z-[999] ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
