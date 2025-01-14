@@ -3,15 +3,15 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="mt-[40px] xl:mt-[80px] w-[90%] max-w-[1440px] mx-auto h-screen space-y-8 xl:space-y-0 flex flex-col xl:flex-row items-center xl:justify-between">
-      <div className="w-full xl:max-w-[45%] text-[#000] space-y-3 md:space-y-5 text-center xl:text-start">
-        <p className=" font-playfair text-lg xl:text-2xl ">
+    <section className="mt-8 xl:mt-20 2xl:mt-40 w-[90%] max-w-[1440px] mx-auto min-h-[60vh] space-y-8 xl:space-y-0 flex flex-col items-center xl:items-start xl:flex-row xl:justify-between">
+      <div className="w-full max-w-xl xl:max-w-[45%] text-black space-y-4 md:space-y-5 text-center xl:text-start">
+        <p className="font-playfair text-lg md:text-2xl">
           Connect. Trust. Thrive
         </p>
-        <p className="font-playfair text-4xl xl:text-[74px] font-bold xl:leading-[90px]">
+        <p className="font-playfair text-4xl md:text-[3.5rem] md:leading-[4rem] xl:text-[4rem] xl:leading-[5rem] font-bold ">
           Connecting social and business minds
         </p>
-        <p className="font-instrument text-sm md:text-lg">
+        <p className="font-instrument text-sm md:text-lg lg:text-xl xl:text-lg">
           Whether you&#39;re expanding your professional circle, seeking new
           collaborations, or simply looking for a trusted community to engage
           with, Quality people empowers you to connect with purpose
@@ -22,7 +22,6 @@ const Hero = () => {
 
         <div className="flex gap-1 text-xs justify-center items-center xl:justify-start">
           <p>AVAILABLE ON IOS & ANDROID |</p>
-
           <div className="flex gap-1 items-end">
             <svg
               width="14"
@@ -36,7 +35,6 @@ const Hero = () => {
                 fill="black"
               />
             </svg>
-
             <svg
               width="13"
               height="14"
@@ -45,8 +43,8 @@ const Hero = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M8.74267 3.80657L8.76262 3.78688L2.52152 0.211075C2.28673 0.0735637 2.01969 0.000734135 1.74759 2.96003e-06C1.41897 -0.000648261 1.09916 0.106171 0.836891 0.304178C0.574625 0.502185 0.384298 0.780517 0.294922 1.09675L0.371788 1.17265L0.295774 1.10156C0.262201 1.22568 0.245496 1.35375 0.24611 1.48232V11.7628C0.246445 11.8909 0.263049 12.0185 0.295522 12.1425L0.294922 12.1432C0.357287 12.3642 0.469366 12.5681 0.62259 12.7392C0.775815 12.9102 0.966129 13.044 1.17898 13.1303C1.39184 13.2165 1.6216 13.253 1.8507 13.2368C2.0798 13.2207 2.30218 13.1524 2.50083 13.0371L8.7502 9.47788L8.44267 9.14358L8.77503 9.47144L11.4569 7.94014C11.6945 7.81574 11.8935 7.62868 12.0323 7.39924C12.1712 7.16979 12.2446 6.90672 12.2446 6.63853C12.2446 6.37034 12.1712 6.10727 12.0323 5.87782C11.8935 5.64838 11.6945 5.46132 11.4569 5.33692H11.4652L8.76262 3.78906L8.74267 3.80657Z"
                 fill="black"
               />
@@ -55,50 +53,52 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full xl:max-w-[45%] relative">
-        <div className="flex items-center gap-5 relative z-[20]">
-          <div className="relative w-[220px] h-[220px] xl:w-[368px] xl:h-[361px] p-3 xl:p-6 ">
-            <div className="absolute inset-0 rounded-full border-[10px] xl:border-[20px] border-[#a3b18a] "></div>
-            <Image
-              src="/Hero_img1.png"
-              alt="Person smiling while looking at phone"
-              width={368}
-              height={361}
-              className="rounded-full w-full h-full object-cover "
-            />
+      <div className="w-full flex items-center justify-center xl:max-w-[45%]">
+        <div>
+          <div className="flex items-center gap-5 relative z-20">
+            <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[368px] lg:h-[361px] p-3 xl:p-6">
+              <div className="absolute inset-0 rounded-full border-[10px] xl:border-[20px] border-[#a3b18a]"></div>
+              <Image
+                src="/Hero_img1.png"
+                alt="Person smiling while looking at phone"
+                width={368}
+                height={361}
+                className="rounded-full w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="mt-[-80px] xl:mt-[-90px] relative w-[45px] h-[45px] md:w-[70px] md:h-[70px] xl:w-[93px] xl:h-[93px] bg-[#8dceee] rounded-full flex justify-center items-center">
+              <Image
+                src="/love_icon.png"
+                alt="love icon"
+                width={63}
+                height={48}
+                className="w-[28px] h-[20px] md:w-[40px] md:h-[30px] xl:w-[55px] xl:h-[40px] object-contain"
+              />
+            </div>
           </div>
 
-          <div className="mt-[-80px] xl:mt-[-90px] relative w-[45px] h-[45px] xl:w-[93px] xl:h-[93px] bg-[#8dceee] rounded-full flex justify-center items-center">
-            <Image
-              src="/love_icon.png"
-              alt="love icon"
-              width={63}
-              height={48}
-              className="w-[28px] h-[20px] xl:w-[55px] xl:h-[40px] object-contain"
-            />
-          </div>
-        </div>
+          <div className="mt-[-60px] md:mt-[-70px] xl:mt-[-110px] flex items-center gap-[60px] md:gap-[80px] relative z-10">
+            <div className="mt-[-70px] md:mt-[-80px] xl:mt-[-90px] relative w-[45px] h-[45px] md:w-[70px] md:h-[70px] xl:w-[93px] xl:h-[93px] bg-[#8dceee] rounded-full flex justify-center items-center">
+              <Image
+                src="/message_icons.png"
+                alt="message icon"
+                width={63}
+                height={48}
+                className="w-[28px] h-[20px] md:w-[40px] md:h-[30px] xl:w-[55px] xl:h-[40px] object-contain"
+              />
+            </div>
 
-        <div className="mt-[-70px] xl:mt-[-110px] flex items-center gap-[80px] relative z-[10]">
-          <div className="mt-[-80px] xl:mt-[-90px] relative w-[45px] h-[45px] xl:w-[93px] xl:h-[93px] bg-[#8dceee] rounded-full flex justify-center items-center">
-            <Image
-              src="/message_icons.png"
-              alt="Pmessage icon"
-              width={63}
-              height={48}
-              className="w-[28px] h-[20px] xl:w-[55px] xl:h-[40px] object-contain"
-            />
-          </div>
-
-          <div className="relative w-[220px] h-[220px] xl:w-[368px] xl:h-[361px] p-3 xl:p-6 ">
-            <div className="absolute inset-0 rounded-full border-[10px] xl:border-[20px] border-[#8dceee] "></div>
-            <Image
-              src="/Hero_img2.png"
-              alt="Person smiling while looking at phone"
-              width={368}
-              height={361}
-              className="rounded-full w-full h-full object-cover "
-            />
+            <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[368px] lg:h-[361px] p-3 xl:p-6">
+              <div className="absolute inset-0 rounded-full border-[10px] xl:border-[20px] border-[#8dceee]"></div>
+              <Image
+                src="/Hero_img2.png"
+                alt="Person smiling while looking at phone"
+                width={368}
+                height={361}
+                className="rounded-full w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -22,13 +22,13 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full p-2 xl:w-[90%] mx-auto md:mt-9 bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
+    <div className="w-full py-3 px-4 xl:w-[90%] max-w-[1440px] mx-auto bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
       <div className="flex items-center gap-1">
         <svg
           viewBox="0 0 29 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[26px] h-[28px] xl:w-[28px] xl:h-[30px]"
+          className="w-[26px] h-[28px] xl:w-[36px] xl:h-[42px]"
         >
           <g clip-path="url(#clip0_165_4140)">
             <path
@@ -59,14 +59,14 @@ const Navbar = () => {
           </defs>
         </svg>
 
-        <div className="text-[#000] font-bold text-xs md:text-sm ">
+        <div className="text-[#000] font-bold text-xs md:text-sm xl:text-xl ">
           <p>Quality</p>
-          <p className="mt-[-4px] md:mt-[-8px]">People</p>
+          <p className="mt-[-4px] xl:mt-[-8px]">People</p>
         </div>
       </div>
 
       {/* Visible only on big screens */}
-      <div className="hidden xl:flex text-[#000] gap-3 md:gap-6 ">
+      <div className="hidden xl:flex text-2xl text-[#000] gap-3 md:gap-6 ">
         {menuLinks.map((navlink) => (
           <div key={navlink.title}>
             <p>{navlink.title}</p>
