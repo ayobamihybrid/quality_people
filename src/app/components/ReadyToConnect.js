@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { FaFacebookF, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa';
 import Image from 'next/image';
 
 const ReadyToConnect = () => {
@@ -19,7 +20,7 @@ const ReadyToConnect = () => {
       <div className="hidden xl:block  absolute right-32 top-[24rem]">
         <div className="w-16 h-16 xl:w-32 xl:h-32 rounded-full overflow-hidden">
           <Image
-            src="/Hero_img1.png"
+            src="/reffered_img.png"
             alt="Person smiling while looking at phone"
             width={368}
             height={361}
@@ -146,50 +147,40 @@ const ReadyToConnect = () => {
             href="#"
             className="bg-[#fff] p-2 rounded-full hover:bg-white/20 transition-colors"
           >
-            <Instagram className="w-4 h-4 xl:w-9 xl:h-9" />
+            <FaInstagram className="w-4 h-4 xl:w-9 xl:h-9" />
           </a>
           <a
             href="#"
             className="bg-[#fff] p-2 rounded-full hover:bg-white/20 transition-colors"
           >
-            <Twitter className="w-4 h-4 xl:w-9 xl:h-9" />
+            <FaXTwitter className="w-4 h-4 xl:w-9 xl:h-9" />
           </a>
           <a
             href="#"
             className="bg-[#fff] p-2 rounded-full hover:bg-white/20 transition-colors"
           >
-            <Facebook className="w-4 h-4 xl:w-9 xl:h-9" />
+            <FaFacebookF className="w-4 h-4 xl:w-9 xl:h-9" />
           </a>
         </div>
 
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex justify-center gap-4">
           <a href="#" className="w-40">
-            <svg
-              width="18"
-              height="16"
-              viewBox="0 0 18 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.3341 6.28666C14.353 4.67166 15.1961 3.18966 16.5696 2.34416C15.6981 1.09966 14.2962 0.339662 12.7901 0.292162C11.1988 0.121162 9.65482 1.24216 8.84968 1.24216C8.04454 1.24216 6.77526 0.301662 5.4302 0.330162C3.65889 0.387162 2.05808 1.37516 1.19611 2.92366C-0.632035 6.10616 0.731968 10.7802 2.48433 13.3547C3.36525 14.6182 4.38825 16.0242 5.73331 15.9672C7.04995 15.9102 7.54251 15.1312 9.12437 15.1312C10.7062 15.1312 11.1514 15.9672 12.5249 15.9387C13.9363 15.9197 14.8267 14.6752 15.6697 13.4022C16.3043 12.5092 16.7874 11.5117 17.1095 10.4667C15.4329 9.75416 14.3436 8.11066 14.3436 6.28666H14.3341Z"
-                fill="white"
-              />
-            </svg>
+            <Image
+              src="/appStore.png"
+              alt="love icon"
+              width={63}
+              height={48}
+              className=" w-full object-contain"
+            />
           </a>
           <a href="#" className="w-40">
-            <svg
-              width="18"
-              height="16"
-              viewBox="0 0 18 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.3341 6.28666C14.353 4.67166 15.1961 3.18966 16.5696 2.34416C15.6981 1.09966 14.2962 0.339662 12.7901 0.292162C11.1988 0.121162 9.65482 1.24216 8.84968 1.24216C8.04454 1.24216 6.77526 0.301662 5.4302 0.330162C3.65889 0.387162 2.05808 1.37516 1.19611 2.92366C-0.632035 6.10616 0.731968 10.7802 2.48433 13.3547C3.36525 14.6182 4.38825 16.0242 5.73331 15.9672C7.04995 15.9102 7.54251 15.1312 9.12437 15.1312C10.7062 15.1312 11.1514 15.9672 12.5249 15.9387C13.9363 15.9197 14.8267 14.6752 15.6697 13.4022C16.3043 12.5092 16.7874 11.5117 17.1095 10.4667C15.4329 9.75416 14.3436 8.11066 14.3436 6.28666H14.3341Z"
-                fill="white"
-              />
-            </svg>
+            <Image
+              src="/playStore.png"
+              alt="love icon"
+              width={63}
+              height={48}
+              className=" w-full object-contain"
+            />
           </a>
         </div>
       </div>

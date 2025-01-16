@@ -8,8 +8,10 @@ import ReadyToConnect from './components/ReadyToConnect';
 
 export default function Home() {
   return (
-    <div className="w-full bg-inherit overflow-hidden">
-      <Navbar />
+    <div className="w-full bg-[#f2fffb] overflow-hidden">
+      <div className='w-full bg-[#f2fffb]'>
+        <Navbar />
+      </div>
 
       <Hero />
 
