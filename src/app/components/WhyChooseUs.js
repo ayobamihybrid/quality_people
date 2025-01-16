@@ -23,11 +23,11 @@ const WhyChooseUs = () => {
   return (
     <div className="max-w-[1440px] mx-auto w-full py-9 px-3 xl:px-5">
       <div className="flex flex-col space-y-4 xl:space-y-9 justify-center items-center text-[#000] text-center">
-        <p className="font-playfair text-4xl xl:text-7xl font-bold">
+        <h2 className="font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
           Why choose us
-        </p>
+        </h2>
 
-        <p className=" w-full xl:max-w-[55%] font-instrument text-lg xl:text-2xl">
+        <p className="max-w-xl xl:max-w-[55%] font-instrument text-sm md:text-xl xl:text-2xl">
           Designed for social and business enthusiasts who are passionate about
           building meaningful, valuable connections
         </p>

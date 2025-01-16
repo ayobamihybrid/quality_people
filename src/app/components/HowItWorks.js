@@ -25,7 +25,9 @@ const HowItWorks = () => {
   return (
     <div className="max-w-[1440px] mx-auto w-full my-9 xl:my-20 p-9 md:p-12 2xl:p-16 bg-[#FDF6F1] rounded-2xl text-[#000] font-playfair">
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-7xl font-bold mb-12 ">How it works</h2>
+        <h2 className="font-playfair text-4xl md:text-5xl xl:text-7xl font-bold mb-12 ">
+          How it works
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
