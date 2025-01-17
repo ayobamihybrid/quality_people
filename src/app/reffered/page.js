@@ -216,7 +216,7 @@ const Reffered = () => {
         </div>
 
         <div className="w-full xl:w-[60%] bg-[#8dceee6f] rounded-3xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 font-instrument">
             <h2 className="text-lg md:text-xl xl:text-2xl mb-6">
               Fill in your details
             </h2>

@@ -60,7 +60,7 @@ const FAQ = () => {
         </button>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 font-instrument">
         {faqItems
           .filter((item) => item.category === activeCategory)
           .map((item, index) => (

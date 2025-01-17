@@ -98,7 +98,7 @@ const Navbar = () => {
               navlink.href.startsWith('/') ? navlink.href : `#${navlink.href}`
             }
             onClick={(e) => handleScroll(e, navlink.href)}
-            className="cursor-pointer hover:text-[#F99B2A] transition-colors duration-200"
+            className="font-instrument cursor-pointer hover:text-[#F99B2A] transition-colors duration-200"
           >
             <p>{navlink.title}</p>
           </a>

@@ -56,12 +56,12 @@ const ReadyToConnect = () => {
         <h2 className="font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
           Ready to connect with purpose?
         </h2>
-        <p className="my-5 xl:my-9 text-slate-300 text-lg md:text-2xl xl:text-3xl mb-8 max-w-2xl mx-auto">
+        <p className="font-instrument my-5 xl:my-9 text-slate-300 text-lg md:text-2xl xl:text-3xl mb-8 max-w-2xl mx-auto">
           Sign up today and become part of a trusted community where meaningful
           relationships drive success.
         </p>
 
-        <button className="bg-[#f39c13] text-white px-5 md:px-8 py-2 md:py-4 rounded-2xl text-sm md:text-2xl xl:text-3xl font-medium hover:bg-[#f39d13a0] transition-colors mb-4">
+        <button className="bg-[#f39c13] text-white px-5 md:px-8 py-2 md:py-4 rounded-2xl text-sm md:text-2xl xl:text-3xl font-medium font-instrument hover:bg-[#f39d13a0] transition-colors mb-4">
           Get referred
         </button>
 

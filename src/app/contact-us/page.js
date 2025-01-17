@@ -36,7 +36,7 @@ const Contact = () => {
     <div className="bg-[#fff]">
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
         <div className="w-full xl:w-[35%] flex flex-col items-center lg:items-start">
-          <h1 className="max-w-sm lg:w-full font-playfair text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
+          <h1 className="max-w-sm lg:w-full text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
             Where to reach us
           </h1>
 
@@ -87,7 +87,7 @@ const Contact = () => {
         </div>
 
         <div className="w-full xl:w-[60%] bg-[#8dceee6f] rounded-3xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 font-instrument">
             <h2 className="text-lg md:text-xl xl:text-2xl mb-6">
               Fill in your details
             </h2>

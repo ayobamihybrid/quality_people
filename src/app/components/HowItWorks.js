@@ -41,10 +41,10 @@ const HowItWorks = () => {
                 {item.step}
               </span>
             </div>
-            <h3 className="text-xl md:text-2xl 2xl:text-3xl font-bold mb-3">
+            <h3 className="font-instrument text-xl md:text-2xl 2xl:text-3xl font-bold mb-3">
               {item.title}
             </h3>
-            <p className="text-base md:text-lg 2xl:text-xl ">
+            <p className="font-instrument text-base md:text-lg 2xl:text-xl ">
               {item.description}
             </p>
           </div>

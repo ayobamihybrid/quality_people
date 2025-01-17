@@ -12,6 +12,7 @@ export default {
         foreground: 'var(--foreground)',
       },
       fontFamily: {
+        sans: ['var(--font-playfair)'],
         playfair: ['var(--font-playfair)'],
         instrument: ['var(--font-instrument-sans)'],
       },

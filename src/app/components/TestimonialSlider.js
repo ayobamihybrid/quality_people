@@ -40,7 +40,7 @@ const TestimonialSlider = ({ testimonials }) => {
             <div
               key={index}
               className={`
-                absolute w-full max-w-2xl p-8 2xl:p-14 rounded-lg transition-all duration-500 text-[#000]
+                absolute w-full max-w-2xl p-8 2xl:p-14 rounded-lg transition-all duration-500 text-[#000] font-instrument
                 ${
                   position === 0
                     ? 'z-20 opacity-100 scale-100 bg-[#8dceee]'
