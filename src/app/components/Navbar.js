@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full py-3 px-4 xl:w-[90%] max-w-[1440px] mx-auto bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
+    <div className="w-full py-3 px-4 xl:w-full bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
       <div className="flex items-center gap-1">
         <svg
           viewBox="0 0 29 32"

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const ReadyToConnect = () => {
   return (
-    <div className="relative mt-[-1rem] xl:mt-[-3rem] w-full max-w-[1440px] mx-auto bg-[#2c3f50] rounded-t-[2rem] xl:rounded-t-[5rem]">
+    <div className="relative mt-[-1rem] xl:mt-[-3rem] w-full  bg-[#2c3f50] rounded-t-[2rem] xl:rounded-t-[5rem]">
       <div className="hidden xl:block absolute left-16 top-16">
         <div className="w-16 h-16 xl:w-32 xl:h-32 rounded-full overflow-hidden">
           <Image
@@ -99,7 +99,7 @@ const ReadyToConnect = () => {
       </div>
       <hr />
 
-      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0 p-4">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-14 md:gap-0 p-4">
         <div className="flex items-center gap-1">
           <svg
             viewBox="0 0 29 32"
