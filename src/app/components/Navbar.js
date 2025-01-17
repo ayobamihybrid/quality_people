@@ -1,12 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 //react icons
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,15 +15,27 @@ const Navbar = () => {
   };
 
   const menuLinks = [
-    { title: 'Benefits', href: '#' },
-    { title: 'How it works', href: '#' },
-    { title: 'Service', href: '#' },
-    { title: 'FAQs', href: '#' },
-    { title: 'Testimonials', href: '#' },
+    { title: 'Benefits', href: 'benefits' },
+    { title: 'How it works', href: 'how-it-works' },
+    { title: 'Service', href: 'service' },
+    { title: 'FAQs', href: 'faqs' },
+    { title: 'Testimonials', href: 'testimonials' },
   ];
 
+  const handleScroll = (e, href) => {
+    e.preventDefault();
+    const element = document.getElementById(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
-    <div className="w-full py-3 px-4 xl:w-full bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
+    <div className="sticky top-0 z-50 w-full py-3 px-4 bg-[#E6F1F1] md:p-4 rounded-md shadow-sm flex justify-between items-center">
       <div className="flex items-center gap-1">
         <svg
           viewBox="0 0 29 32"
@@ -59,22 +72,33 @@ const Navbar = () => {
           </defs>
         </svg>
 
-        <div className="text-[#000] font-bold text-xs md:text-sm xl:text-xl ">
+        <div
+          className="text-[#000] font-bold text-xs md:text-sm xl:text-xl cursor-pointer"
+          onClick={() => router.replace('/')}
+        >
           <p>Quality</p>
           <p className="mt-[-4px] xl:mt-[-8px]">People</p>
         </div>
       </div>
 
       {/* Visible only on big screens */}
-      <div className="hidden xl:flex text-2xl text-[#000] gap-3 md:gap-6 ">
+      <div className="hidden xl:flex text-2xl text-[#000] gap-3 md:gap-6">
         {menuLinks.map((navlink) => (
-          <div key={navlink.title}>
+          <a
+            key={navlink.title}
+            href={`#${navlink.href}`}
+            onClick={(e) => handleScroll(e, navlink.href)}
+            className="cursor-pointer hover:text-[#F99B2A] transition-colors duration-200"
+          >
             <p>{navlink.title}</p>
-          </div>
+          </a>
         ))}
       </div>
 
-      <button className="hidden xl:block bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200">
+      <button
+        className="hidden xl:block bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
+        onClick={() => router.replace('/reffered')}
+      >
         Get reffered
       </button>
 
@@ -123,18 +147,22 @@ const Navbar = () => {
 
         {/* Menu items */}
         <div className="p-4 space-y-4  xl:hidden">
-          <div className=" pt-4 space-y-2 border-t border-gray-800">
+          <div className="pt-4 space-y-2 border-t border-gray-800">
             {menuLinks.map((link) => (
-              <Link
+              <a
                 key={link.title}
-                href={link.href}
-                className="block text-gray-400 hover:text-white py-2 text-sm"
+                href={`#${link.href}`}
+                onClick={(e) => handleScroll(e, link.href)}
+                className="block text-gray-400 hover:text-white py-2 text-sm transition-colors duration-200"
               >
                 {link.title}
-              </Link>
+              </a>
             ))}
           </div>
-          <button className=" bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200">
+          <button
+            className=" bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
+            onClick={() => router.replace('/reffered')}
+          >
             Get reffered
           </button>
         </div>

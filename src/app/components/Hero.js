@@ -1,7 +1,12 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
+
   return (
     <section className="mt-8 xl:mt-20 2xl:mt-40 w-[90%] max-w-[1440px] mx-auto min-h-[60vh] space-y-8 xl:space-y-0 flex flex-col items-center xl:items-start xl:flex-row xl:justify-between">
       <div className="w-full max-w-xl xl:max-w-[45%] text-black space-y-4 md:space-y-5 text-center xl:text-start">
@@ -16,7 +21,10 @@ const Hero = () => {
           collaborations, or simply looking for a trusted community to engage
           with, Quality people empowers you to connect with purpose
         </p>
-        <button className="bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200">
+        <button
+          className="bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
+          onClick={() => router.replace('/reffered')}
+        >
           Get reffered
         </button>
 

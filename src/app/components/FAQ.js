@@ -34,7 +34,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full bg-[#fff] p-4 md:p-7 rounded-3xl">
+    <section id="faqs" className="w-full bg-[#fff] p-4 md:p-7 rounded-3xl">
       <div className="flex gap-2 mb-6 max-w-xs rounded-full p-2 md:p-3 bg-[#f39d1383]">
         <button
           onClick={() => setActiveCategory('dating')}
@@ -97,7 +97,7 @@ const FAQ = () => {
             </div>
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 

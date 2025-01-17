@@ -23,7 +23,8 @@ const TestimonialSlider = ({ testimonials }) => {
   };
 
   return (
-    <div
+    <section
+      id="testimonials"
       className="w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -90,7 +91,7 @@ const TestimonialSlider = ({ testimonials }) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

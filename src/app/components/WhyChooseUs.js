@@ -21,7 +21,10 @@ const WhyChooseUs = () => {
     },
   ];
   return (
-    <div className="max-w-[1440px] mx-auto w-full py-9 px-3 xl:px-5">
+    <section
+      id="benefits"
+      className="max-w-[1440px] mx-auto w-full py-9 px-3 xl:px-5"
+    >
       <div className="flex flex-col space-y-4 xl:space-y-9 justify-center items-center text-[#000] text-center">
         <h2 className="font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
           Why choose us
@@ -34,7 +37,7 @@ const WhyChooseUs = () => {
 
         <ImageSlider slides={slides} />
       </div>
-    </div>
+    </section>
   );
 };
 
