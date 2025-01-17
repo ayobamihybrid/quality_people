@@ -31,6 +31,9 @@ const instrumentSans = Instrument_Sans({
 export const metadata = {
   title: 'Quality People',
   description: 'Designed for quality people',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

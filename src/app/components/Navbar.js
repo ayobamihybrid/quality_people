@@ -20,10 +20,18 @@ const Navbar = () => {
     { title: 'Service', href: 'service' },
     { title: 'FAQs', href: 'faqs' },
     { title: 'Testimonials', href: 'testimonials' },
+    { title: 'Contact us', href: '/contact-us' },
   ];
 
   const handleScroll = (e, href) => {
     e.preventDefault();
+
+    if (href.startsWith('/')) {
+      router.push(href);
+      setIsMenuOpen(false);
+      return;
+    }
+
     const element = document.getElementById(href);
     if (element) {
       element.scrollIntoView({
@@ -86,7 +94,9 @@ const Navbar = () => {
         {menuLinks.map((navlink) => (
           <a
             key={navlink.title}
-            href={`#${navlink.href}`}
+            href={
+              navlink.href.startsWith('/') ? navlink.href : `#${navlink.href}`
+            }
             onClick={(e) => handleScroll(e, navlink.href)}
             className="cursor-pointer hover:text-[#F99B2A] transition-colors duration-200"
           >
@@ -151,7 +161,7 @@ const Navbar = () => {
             {menuLinks.map((link) => (
               <a
                 key={link.title}
-                href={`#${link.href}`}
+                href={link.href.startsWith('/') ? link.href : `#${link.href}`}
                 onClick={(e) => handleScroll(e, link.href)}
                 className="block text-gray-400 hover:text-white py-2 text-sm transition-colors duration-200"
               >
