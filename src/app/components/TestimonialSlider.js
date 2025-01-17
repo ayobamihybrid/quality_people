@@ -84,7 +84,7 @@ const TestimonialSlider = ({ testimonials }) => {
               w-3 h-3 2xl:w-5 2xl:h-5 rounded-full cursor-pointer transition-all duration-300
               ${
                 currentIndex === testimonialsIndex
-                  ? 'bg-[#f39c13] w-12 2xl:w-20'
+                  ? 'bg-[#f39c13] w-12 2xl:w-24'
                   : 'bg-gray-400 hover:bg-gray-600'
               }
             `}
