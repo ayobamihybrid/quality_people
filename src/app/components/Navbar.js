@@ -171,7 +171,10 @@ const Navbar = () => {
           </div>
           <button
             className=" bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
-            onClick={() => router.replace('/reffered')}
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen);
+              router.replace('/reffered');
+            }}
           >
             Get reffered
           </button>

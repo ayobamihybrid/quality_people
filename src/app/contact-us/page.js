@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
 
 import { FaFacebookF, FaXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 
-import { MdCloudUpload } from 'react-icons/md';
+import { toast, Toaster } from 'react-hot-toast';
 
-import Image from 'next/image';
 import ReadyToConnect from '../components/ReadyToConnect';
 
 const Contact = () => {
@@ -19,9 +17,50 @@ const Contact = () => {
     text: '',
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+    } else if (formData.fullName.trim().length < 2) {
+      newErrors.fullName = 'Full name must be at least 2 characters';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    const phoneRegex = /^\+?[\d\s-]{10,}$/;
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Phone number is required';
+    } else if (!phoneRegex.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Please enter a valid phone number';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    if (validateForm()) {
+      console.log('Form submitted:', formData);
+      toast.success('Form submitted successfully!');
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        text: '',
+      });
+      setErrors({});
+    } else {
+      toast.error('Please fix the errors in the form');
+    }
   };
 
   const handleChange = (e) => {
@@ -30,10 +69,23 @@ const Contact = () => {
       ...prev,
       [name]: value,
     }));
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: '',
+      }));
+    }
+  };
+
+  const renderError = (fieldName) => {
+    return errors[fieldName] ? (
+      <p className="text-red-500 text-sm mt-1">{errors[fieldName]}</p>
+    ) : null;
   };
 
   return (
     <div className="bg-[#fff]">
+      <Toaster position="top-right" />
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
         <div className="w-full xl:w-[35%] flex flex-col items-center lg:items-start">
           <h1 className="max-w-sm lg:w-full text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
@@ -92,32 +144,47 @@ const Contact = () => {
               Fill in your details
             </h2>
 
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full name"
-              className="w-full p-4 rounded-md border bg-[#ffffff91]"
-              value={formData.fullName}
-              onChange={handleChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Full name"
+                className={`w-full p-4 rounded-md border ${
+                  errors.fullName ? 'border-red-500' : 'border-gray-300'
+                } bg-[#ffffff91]`}
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+              {renderError('fullName')}
+            </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full p-4 rounded-md border bg-[#ffffff91]"
-              value={formData.email}
-              onChange={handleChange}
-            />
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className={`w-full p-4 rounded-md border ${
+                  errors.email ? 'border-red-500' : 'border-gray-300'
+                } bg-[#ffffff91]`}
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {renderError('email')}
+            </div>
 
-            <input
-              type="text"
-              name="phoneNumber"
-              placeholder="Phone number"
-              className="w-full p-4 rounded-md border bg-[#ffffff91]"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-            />
+            <div>
+              <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="Phone number"
+                className={`w-full p-4 rounded-md border ${
+                  errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
+                } bg-[#ffffff91]`}
+                value={formData.phoneNumber}
+                onChange={handleChange}
+              />
+              {renderError('phoneNumber')}
+            </div>
 
             <div>
               <textarea
