@@ -86,17 +86,19 @@ const Contact = () => {
   return (
     <div className="bg-[#fff]">
       <Toaster position="top-right" />
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
-        <div className="w-full xl:w-[35%] flex flex-col items-center lg:items-start">
-          <h1 className="max-w-sm lg:w-full text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
-            Where to reach us
-          </h1>
-
+      <h1 className="mt-9 sm:mt-16 sm:mb-5 lg:hidden w-full lg:w-full text-center text-3xl text-[#000] md:text-5xl xl:text-7xl font-bold">
+        Where to reach us
+      </h1>
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
+        <div className="w-full lg:w-[33%] flex flex-col items-center lg:items-start">
           <div className="max-w-sm lg:w-full text-center lg:text-left font-instrument">
+            <h1 className="hidden lg:block max-w-sm lg:w-full text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
+              Where to reach us
+            </h1>
             <div className="mt-14 text-lg">
               <p className="mb-4 text-[#00000063]">Address</p>
 
-              <p>123 Maplewood LaneSpringfield, IL 62704United States</p>
+              <p>123 Maplewood LaneSpringfield, IL 62704 United States</p>
             </div>
 
             <div className="my-7 text-lg">
@@ -119,26 +121,26 @@ const Contact = () => {
                   href="#"
                   className="bg-[#f39c13] p-2 rounded-full hover:bg-white/20 transition-colors"
                 >
-                  <FaInstagram className="w-4 h-4 xl:w-9 xl:h-9" />
+                  <FaInstagram className="w-4 h-4 xl:w-7 xl:h-7" />
                 </a>
                 <a
                   href="#"
                   className="bg-[#f39c13] p-2 rounded-full hover:bg-white/20 transition-colors"
                 >
-                  <FaXTwitter className="w-4 h-4 xl:w-9 xl:h-9" />
+                  <FaXTwitter className="w-4 h-4 xl:w-7 xl:h-7" />
                 </a>
                 <a
                   href="#"
                   className="bg-[#f39c13] p-2 rounded-full hover:bg-white/20 transition-colors"
                 >
-                  <FaFacebookF className="w-4 h-4 xl:w-9 xl:h-9" />
+                  <FaFacebookF className="w-4 h-4 xl:w-7 xl:h-7" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-full xl:w-[60%] bg-[#8dceee6f] rounded-3xl p-8">
+        <div className="w-full lg:w-[62%] bg-[#8dceee6f] rounded-3xl py-8 px-4 xl:p-8">
           <form onSubmit={handleSubmit} className="space-y-6 font-instrument">
             <h2 className="text-lg md:text-xl xl:text-2xl mb-6">
               Fill in your details
@@ -149,7 +151,7 @@ const Contact = () => {
                 type="text"
                 name="fullName"
                 placeholder="Full name"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.fullName ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.fullName}
@@ -163,7 +165,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.email}
@@ -177,7 +179,7 @@ const Contact = () => {
                 type="tel"
                 name="phoneNumber"
                 placeholder="Phone number"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.phoneNumber}

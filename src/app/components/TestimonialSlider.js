@@ -30,7 +30,7 @@ const TestimonialSlider = ({ testimonials }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative flex justify-center items-center min-h-[19rem] my-4">
+      <div className="relative flex justify-center items-center min-h-[20rem] my-4">
         <div className="flex justify-center items-center w-full">
           {testimonials.map((testimonial, index) => {
             let position = index - currentIndex;
@@ -42,7 +42,7 @@ const TestimonialSlider = ({ testimonials }) => {
               <div
                 key={index}
                 className={`
-                  absolute w-full max-w-xl p-6 rounded-lg transition-all duration-500 text-black
+                  absolute w-full max-w-xl p-3 rounded-lg transition-all duration-500 text-black
                   ${
                     position === 0
                       ? 'z-20 opacity-100 scale-100 translate-x-0 bg-sky-200'

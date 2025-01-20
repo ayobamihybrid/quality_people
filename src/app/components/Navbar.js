@@ -185,21 +185,24 @@ const Navbar = () => {
         </div>
 
         {/* Menu items */}
-        <div className="p-4 space-y-4  xl:hidden">
+        <div className="p-4 space-y-4 xl:hidden">
           <div className="pt-4 space-y-2 border-t border-gray-800">
             {menuLinks.map((link) => (
               <a
                 key={link.title}
                 href={link.href.startsWith('/') ? link.href : `#${link.href}`}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="block text-gray-400 hover:text-white py-2 text-sm transition-colors duration-200"
+                className="block text-gray-400 font-instrument hover:text-white py-2 text-lg transition-colors duration-200"
               >
                 {link.title}
               </a>
             ))}
           </div>
+        </div>
+
+        <div className="mt-9 w-full flex justify-center">
           <button
-            className=" bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
+            className=" bg-[#F99B2A] hover:bg-[#e88d1f] font-instrument text-lg text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
               router.replace('/reffered');

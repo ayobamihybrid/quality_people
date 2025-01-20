@@ -41,7 +41,7 @@ const Network = () => {
       id="service"
       className="w-full max-w-[1440px] mx-auto my-14 px-3 xl:px-5"
     >
-      <div className="flex flex-col space-y-4 md:space-y-9 justify-center items-center text-[#000] text-center">
+      <div className="flex flex-col space-y-4 md:space-y-9 xl:space-y-16 justify-center items-center text-[#000] text-center">
         <p className="max-w-xl xl:max-w-4xl text-3xl md:text-5xl xl:text-7xl font-bold">
           Join a network that values trust and growth
         </p>

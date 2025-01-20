@@ -1,10 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 
-import { FaFacebookF, FaXTwitter } from 'react-icons/fa6';
-import { FaInstagram } from 'react-icons/fa';
 import { MdCloudUpload } from 'react-icons/md';
 
 import { toast, Toaster } from 'react-hot-toast';
@@ -203,11 +200,11 @@ const Reffered = () => {
       <Toaster position="top-right" />
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
         <div className="w-full xl:w-[40%] flex flex-col items-center lg:items-start">
-          <h1 className="font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
+          <h1 className="my-4 font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
             Lets get you referred
           </h1>
 
-          <div className="mt-8 xl:mt-20 w-[14rem] xl:w-[22rem]">
+          <div className="hidden lg:block mt-20 w-[14rem] xl:w-[22rem]">
             <img
               src="/reffered_img.png"
               alt="Person smiling"
@@ -216,17 +213,18 @@ const Reffered = () => {
           </div>
         </div>
 
-        <div className="w-full xl:w-[60%] bg-[#8dceee6f] rounded-3xl p-8">
+        <div className="w-full xl:w-[60%] bg-[#8dceee6f] rounded-3xl py-8 px-4 xl:p-8">
           <form onSubmit={handleSubmit} className="space-y-6 font-instrument">
             <h2 className="text-lg md:text-xl xl:text-2xl mb-6">
               Fill in your details
             </h2>
+
             <div>
               <input
                 type="text"
                 name="fullName"
                 placeholder="Full name"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.fullName ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.fullName}
@@ -240,7 +238,7 @@ const Reffered = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.email}
@@ -254,7 +252,7 @@ const Reffered = () => {
                 type="tel"
                 name="phoneNumber"
                 placeholder="Phone number"
-                className={`w-full p-4 rounded-md border ${
+                className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                   errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
                 } bg-[#ffffff91]`}
                 value={formData.phoneNumber}
@@ -269,7 +267,7 @@ const Reffered = () => {
                   type="number"
                   name="age"
                   placeholder="Age"
-                  className={`w-full p-4 rounded-md border ${
+                  className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                     errors.age ? 'border-red-500' : 'border-gray-300'
                   } bg-[#ffffff91]`}
                   value={formData.age}
@@ -278,12 +276,12 @@ const Reffered = () => {
                 {renderError('age')}
               </div>
 
-              <div className="w-1/2">
+              <div className="relative w-1/2">
                 <select
                   name="sex"
-                  className={`w-full p-4 rounded-md border ${
+                  className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
                     errors.sex ? 'border-red-500' : 'border-gray-300'
-                  } bg-[#ffffff91]`}
+                  } bg-[#ffffff91] appearance-none`}
                   value={formData.sex}
                   onChange={handleChange}
                 >
@@ -292,34 +290,59 @@ const Reffered = () => {
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                    <path
+                      d="M1 1L7 7L13 1"
+                      stroke="#666666"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
                 {renderError('sex')}
               </div>
             </div>
 
             <div className="flex gap-4">
-              <div className="w-1/2">
+              <div className="relative w-1/2">
                 <select
                   name="country"
-                  className={`w-full p-4 rounded-md border ${
-                    errors.country ? 'border-red-500' : 'border-gray-300'
-                  } bg-[#ffffff91]`}
+                  className={`w-full p-4 rounded-md border focus:ring-0 outline-none ${
+                    errors.sex ? 'border-red-500' : 'border-gray-300'
+                  } bg-[#ffffff91] appearance-none`}
                   value={formData.country}
                   onChange={handleChange}
                 >
-                  <option value="">Country</option>
+                  <option value="" className="ml-[-8px]">
+                    Country
+                  </option>
                   <option value="ng">Nigeria</option>
                   <option value="us">United States</option>
                   <option value="cn">China</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                    <path
+                      d="M1 1L7 7L13 1"
+                      stroke="#666666"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
                 {renderError('country')}
               </div>
 
-              <div className="w-1/2">
+              <div className="relative w-1/2">
                 <select
                   name="state"
-                  className={`w-full p-4 rounded-md border ${
+                  className={`w-full p-4 rounded-md border focus:ring-0 outline-none${
                     errors.state ? 'border-red-500' : 'border-gray-300'
-                  } bg-[#ffffff91]`}
+                  } bg-[#ffffff91] appearance-none`}
                   value={formData.state}
                   onChange={handleChange}
                 >
@@ -328,6 +351,18 @@ const Reffered = () => {
                   <option value="ny">New York</option>
                   <option value="hk">Hong Kong</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                    <path
+                      d="M1 1L7 7L13 1"
+                      stroke="#666666"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
                 {renderError('state')}
               </div>
             </div>
@@ -360,8 +395,8 @@ const Reffered = () => {
                     <div className="flex flex-col items-center gap-2">
                       <MdCloudUpload className="h-8 w-8 xl:w-14 xl:h-14 text-gray-400" />
                       <p className="text-sm md:text-lg xl:text-xl">
-                        Drag or <span className="text-[#F99B2A]">upload</span>{' '}
-                        your files
+                        Drag or <span className="text-[#F99B2A]">upload</span>a
+                        picture of you
                       </p>
                     </div>
                   ) : (
@@ -405,7 +440,9 @@ const Reffered = () => {
         </div>
       </div>
 
-      <Footer contactUs={true} />
+      <div className="mt-20">
+        <Footer contactUs={true} />
+      </div>
     </div>
   );
 };
