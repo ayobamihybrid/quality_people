@@ -28,7 +28,7 @@ const ImageSlider = ({ slides }) => {
 
   return (
     <div
-      className="relative w-full mx-auto h-96 xl:h-[28rem] 2xl:h-[29rem]"
+      className="relative w-full mx-auto h-96 xl:h-[38rem]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

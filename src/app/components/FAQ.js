@@ -38,7 +38,7 @@ const FAQ = () => {
       <div className="flex gap-2 mb-6 max-w-xs rounded-full p-2 md:p-3 bg-[#f39d1383]">
         <button
           onClick={() => setActiveCategory('dating')}
-          className={`px-4 py-1 md:py-2 rounded-full text-sm md:text-lg xl:text-2xl font-medium transition-colors
+          className={`px-5 py-1 md:py-2 rounded-full text-sm md:text-lg xl:text-[1.4rem] font-medium transition-colors
             ${
               activeCategory === 'dating'
                 ? 'bg-[#f39c13] text-white'
@@ -49,7 +49,7 @@ const FAQ = () => {
         </button>
         <button
           onClick={() => setActiveCategory('networking')}
-          className={`px-4 py-1 md:py-2 rounded-full text-sm md:text-lg xl:text-2xl font-medium transition-colors
+          className={`px-5 py-1 md:py-2 rounded-full text-sm md:text-lg xl:text-[1.4rem] font-medium transition-colors
             ${
               activeCategory === 'networking'
                 ? 'bg-[#f39c13] text-white'
@@ -74,7 +74,7 @@ const FAQ = () => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
-                <span className="text-xl md:text-2xl xl:text-4xl font-medium text-left">
+                <span className="text-lg md:text-xl xl:text-2xl font-medium text-left">
                   {item.title}
                 </span>
                 <ChevronDown
@@ -90,7 +90,7 @@ const FAQ = () => {
                   activeIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="p-4 bg-white text-xl md:text-2xl xl:text-4xl ">
+                <div className="p-4 bg-white text-lg md:text-xl xl:text-2xl ">
                   {item.content}
                 </div>
               </div>

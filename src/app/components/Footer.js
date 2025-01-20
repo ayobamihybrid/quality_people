@@ -7,8 +7,8 @@ import Image from 'next/image';
 const Footer = ({ contactUs }) => {
   return (
     <div
-      className={`w-full bg-[#2c3f50] flex flex-col md:flex-row justify-between items-center gap-14 md:gap-0 p-4 ${
-        contactUs && 'rounded-t-[2rem] xl:rounded-t-[5rem] py-12 xl:py-32 px-20'
+      className={`w-full bg-[#2c3f50] flex flex-col md:flex-row justify-between items-center gap-14 md:gap-0 py-12 xl:py-36 px-[6rem] ${
+        contactUs && 'rounded-t-[2rem] xl:rounded-t-[5rem] py-12 xl:py-36 px-20'
       } `}
     >
       <div className="flex items-center gap-1">
@@ -53,7 +53,7 @@ const Footer = ({ contactUs }) => {
         </div>
       </div>
 
-      <div className="flex gap-4 text-[#000]">
+      <div className="flex gap-4 xl:gap-6 text-[#000] justify-end items-center">
         <a
           href="#"
           className="bg-[#fff] p-2 rounded-full hover:bg-white/20 transition-colors"

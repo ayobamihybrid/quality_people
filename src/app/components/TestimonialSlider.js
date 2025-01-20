@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import { BiSolidQuoteAltLeft } from 'react-icons/bi';
 
@@ -25,67 +26,71 @@ const TestimonialSlider = ({ testimonials }) => {
   return (
     <section
       id="testimonials"
-      className="w-full"
+      className="w-full overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative flex justify-center items-center min-h-[18rem] md:min-h-[15rem] xl:min-h-[20rem] my-4 2xl:my-8">
-        {testimonials.map((testimonial, index) => {
-          let position = index - currentIndex;
+      <div className="relative flex justify-center items-center min-h-[19rem] my-4">
+        <div className="flex justify-center items-center w-full">
+          {testimonials.map((testimonial, index) => {
+            let position = index - currentIndex;
 
-          if (position < -1) position = testimonials.length - 1;
-          if (position > 1) position = -testimonials.length + 1;
+            if (position < -1) position = testimonials.length - 1;
+            if (position > 1) position = -testimonials.length + 1;
 
-          return (
-            <div
-              key={index}
-              className={`
-                absolute w-full max-w-2xl p-8 2xl:p-14 rounded-lg transition-all duration-500 text-[#000] font-instrument
-                ${
-                  position === 0
-                    ? 'z-20 opacity-100 scale-100 bg-[#8dceee]'
-                    : position === -1
-                    ? 'z-10 opacity-50 scale-90 -translate-x-[60%] bg-[#8eccea]'
-                    : position === 1
-                    ? 'z-10 opacity-50 scale-90 translate-x-[60%] bg-[#8eccea]'
-                    : 'opacity-0 scale-90'
-                }
-              `}
-            >
-              <BiSolidQuoteAltLeft className=" w-8 h-8 2xl:w-14 2xl:h-14 mb-2" />
+            return (
+              <div
+                key={index}
+                className={`
+                  absolute w-full max-w-xl p-6 rounded-lg transition-all duration-500 text-black
+                  ${
+                    position === 0
+                      ? 'z-20 opacity-100 scale-100 translate-x-0 bg-sky-200'
+                      : position === -1
+                      ? 'z-10 opacity-70 scale-90 -translate-x-[100%] bg-sky-100'
+                      : position === 1
+                      ? 'z-10 opacity-70 scale-90 translate-x-[100%] bg-sky-100'
+                      : 'opacity-0'
+                  }
+                `}
+              >
+                <div className="bg-white/10 rounded-lg p-6">
+                  <BiSolidQuoteAltLeft className="w-8 h-8 mb-4 text-black" />
 
-              <p className="text-left text-lg 2xl:text-2xl mb-6">
-                {testimonial.text}
-              </p>
-              <div className="flex items-center gap-3">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-10 h-10 2xl:w-14 2xl:h-14 rounded-full object-cover"
-                />
-                <div className="text-left">
-                  <h3 className="text-sm 2xl:text-lg font-bold">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-sm 2xl:text-lg">{testimonial.title}</p>
+                  <p className="text-left text-lg mb-6">{testimonial.text}</p>
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div className="text-left">
+                      <h3 className="text-sm font-semibold">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-sm text-gray-700">
+                        {testimonial.title}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
-      <div className="flex justify-center space-x-3 mb-9">
+      <div className="flex justify-center gap-2">
         {testimonials.map((_, testimonialsIndex) => (
           <div
             key={testimonialsIndex}
             onClick={() => goToSlide(testimonialsIndex)}
             className={`
-              w-3 h-3 2xl:w-5 2xl:h-5 rounded-full cursor-pointer transition-all duration-300
+              h-4 rounded-full cursor-pointer transition-all duration-300
               ${
                 currentIndex === testimonialsIndex
-                  ? 'bg-[#f39c13] w-12 2xl:w-24'
-                  : 'bg-gray-400 hover:bg-gray-600'
+                  ? 'bg-[#f39c13] w-20 2xl:w-24'
+                  : 'bg-gray-300 w-4 hover:bg-gray-400'
               }
             `}
           />

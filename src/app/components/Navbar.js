@@ -1,14 +1,16 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 //react icons
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,15 +25,42 @@ const Navbar = () => {
     { title: 'Contact us', href: '/contact-us' },
   ];
 
-  const handleScroll = (e, href) => {
+  useEffect(() => {
+    // If we have a pending scroll target and we're on the homepage
+    if (pendingScroll && pathname === '/') {
+      const element = document.getElementById(pendingScroll);
+      if (element) {
+        // Added a small delay to ensure the page content is loaded
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+          setPendingScroll(null);
+        }, 100);
+      }
+    }
+  }, [pathname, pendingScroll]);
+
+  const handleScroll = async (e, href) => {
     e.preventDefault();
 
+    // If it's an absolute path (like /contact-us), just navigate
     if (href.startsWith('/')) {
       router.push(href);
       setIsMenuOpen(false);
       return;
     }
 
+    // If we're not on the homepage, set pending scroll and navigate home
+    if (pathname !== '/') {
+      setPendingScroll(href);
+      router.push('/');
+      setIsMenuOpen(false);
+      return;
+    }
+
+    // If we're already on the homepage, just scroll
     const element = document.getElementById(href);
     if (element) {
       element.scrollIntoView({
@@ -90,7 +119,7 @@ const Navbar = () => {
       </div>
 
       {/* Visible only on big screens */}
-      <div className="hidden xl:flex text-2xl text-[#000] gap-3 md:gap-6">
+      <div className="hidden xl:flex text-xl text-[#000] gap-8">
         {menuLinks.map((navlink) => (
           <a
             key={navlink.title}
@@ -106,7 +135,7 @@ const Navbar = () => {
       </div>
 
       <button
-        className="hidden xl:block bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
+        className="hidden xl:block bg-[#F99B2A] hover:bg-[#e88d1f] text-white font-instrument font-medium px-3 md:px-6 py-1 md:py-2 rounded-lg transition-colors duration-200"
         onClick={() => router.replace('/reffered')}
       >
         Get reffered
