@@ -8,6 +8,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { toast, Toaster } from 'react-hot-toast';
 
 import ReadyToConnect from '../components/ReadyToConnect';
+import Navbar from '../components/Navbar';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -85,6 +86,7 @@ const Contact = () => {
 
   return (
     <div className="bg-[#fff]">
+      <Navbar />
       <Toaster position="top-right" />
       <h1 className="mt-9 sm:mt-16 sm:mb-5 lg:hidden w-full lg:w-full text-center text-3xl text-[#000] md:text-5xl xl:text-7xl font-bold">
         Where to reach us
@@ -93,7 +95,7 @@ const Contact = () => {
         <div className="w-full lg:w-[33%] flex flex-col items-center lg:items-start">
           <div className="max-w-sm lg:w-full text-center lg:text-left font-instrument">
             <h1 className="hidden lg:block max-w-sm lg:w-full text-center lg:text-left text-3xl md:text-5xl xl:text-7xl font-bold">
-              Where to reach us
+              Where to <br /> reach us
             </h1>
             <div className="mt-14 text-lg">
               <p className="mb-4 text-[#00000063]">Address</p>

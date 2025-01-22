@@ -6,6 +6,7 @@ import { MdCloudUpload } from 'react-icons/md';
 
 import { toast, Toaster } from 'react-hot-toast';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const Reffered = () => {
   const [formData, setFormData] = useState({
@@ -197,11 +198,12 @@ const Reffered = () => {
 
   return (
     <div className="bg-[#fff]">
+      <Navbar />
       <Toaster position="top-right" />
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-5 xl:gap-0 lg:justify-between px-4 md:px-8 py-8 lg:py-20 text-[#000]">
         <div className="w-full xl:w-[40%] flex flex-col items-center lg:items-start">
-          <h1 className="my-4 font-playfair text-3xl md:text-5xl xl:text-7xl font-bold">
-            Lets get you referred
+          <h1 className="my-4 font-playfair text-3xl md:text-5xl xl:text-7xl font-bold text-center lg:text-left">
+            Lets get <br /> you referred
           </h1>
 
           <div className="hidden lg:block mt-20 w-[14rem] xl:w-[22rem]">
@@ -290,7 +292,7 @@ const Reffered = () => {
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <div className="pointer-events-none absolute inset-y-0 top-7 right-4 ">
                   <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                     <path
                       d="M1 1L7 7L13 1"
@@ -323,7 +325,7 @@ const Reffered = () => {
                   <option value="cn">China</option>
                 </select>
 
-                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <div className="pointer-events-none absolute inset-y-0 top-7 right-4 ">
                   <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                     <path
                       d="M1 1L7 7L13 1"
@@ -352,7 +354,7 @@ const Reffered = () => {
                   <option value="hk">Hong Kong</option>
                 </select>
 
-                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <div className="pointer-events-none absolute inset-y-0 top-7 right-4 ">
                   <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                     <path
                       d="M1 1L7 7L13 1"
@@ -395,7 +397,7 @@ const Reffered = () => {
                     <div className="flex flex-col items-center gap-2">
                       <MdCloudUpload className="h-8 w-8 xl:w-14 xl:h-14 text-gray-400" />
                       <p className="text-sm md:text-lg xl:text-xl">
-                        Drag or <span className="text-[#F99B2A]">upload</span>a
+                        Drag or <span className="text-[#F99B2A]">upload</span> a
                         picture of you
                       </p>
                     </div>

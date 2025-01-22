@@ -8,15 +8,17 @@ import ReadyToConnect from './components/ReadyToConnect';
 
 export default function Home() {
   return (
-    <div className="w-full bg-[#f2fffb] overflow-hidden">
-      <Hero />
-
-      <div className="w-full bg-[#fff]">
-        <WhyChooseUs />
-        <HowItWorks />
-        <Network />
-        <HaveMoreQuestions />
-        <ReadyToConnect />
+    <div className="w-full bg-[#f2fffb]">
+      <Navbar />
+      <div className="overflow-hidden">
+        <Hero />
+        <div className="w-full bg-[#fff]">
+          <WhyChooseUs />
+          <HowItWorks />
+          <Network />
+          <HaveMoreQuestions />
+          <ReadyToConnect />
+        </div>
       </div>
     </div>
   );
