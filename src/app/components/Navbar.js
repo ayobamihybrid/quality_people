@@ -127,7 +127,7 @@ const Navbar = () => {
               navlink.href.startsWith('/') ? navlink.href : `#${navlink.href}`
             }
             onClick={(e) => handleScroll(e, navlink.href)}
-            className="font-instrument cursor-pointer hover:text-[#F99B2A] transition-colors duration-200"
+            className="font-instrument cursor-pointer hover:text-[#8dceee] transition-colors duration-200"
           >
             <p>{navlink.title}</p>
           </a>
@@ -143,7 +143,7 @@ const Navbar = () => {
 
       {/* hamburger icon for mobile screen */}
       <div className=" xl:hidden cursor-pointer" onClick={toggleMenu}>
-        <GiHamburgerMenu color="#000" size={24} />
+        <GiHamburgerMenu color="#8dceee" size={24} />
       </div>
 
       {/* Mobile menu overlay */}
