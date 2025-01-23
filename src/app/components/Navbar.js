@@ -143,7 +143,7 @@ const Navbar = () => {
 
       {/* hamburger icon for mobile screen */}
       <div className=" xl:hidden cursor-pointer" onClick={toggleMenu}>
-        <GiHamburgerMenu color="#8dceee" size={24} />
+        <GiHamburgerMenu color="#F99B2A" size={24} />
       </div>
 
       {/* Mobile menu overlay */}
