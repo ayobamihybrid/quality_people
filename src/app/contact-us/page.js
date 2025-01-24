@@ -47,18 +47,40 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Form submitted:', formData);
-      toast.success('Form submitted successfully!');
-      setFormData({
-        fullName: '',
-        email: '',
-        phoneNumber: '',
-        text: '',
-      });
-      setErrors({});
+      try {
+        const entries = {
+          'entry.923039544': formData.fullName,
+          'entry.251243541': formData.email,
+          'entry.1416513801': formData.phoneNumber,
+          'entry.1511225638': formData.text,
+        };
+
+        const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSdEm9KMK1CscOw-u34UoPXYQcoxM-9a7p0h9Bz87u7hTesEwA/formResponse`;
+
+        await fetch(formUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          mode: 'no-cors',
+          body: new URLSearchParams(entries),
+        });
+
+        toast.success('Form submitted successfully!');
+        setFormData({
+          fullName: '',
+          email: '',
+          phoneNumber: '',
+          text: '',
+        });
+        setErrors({});
+      } catch (error) {
+        toast.error(
+          'There was an error submitting the form. Please try again later.'
+        );
+        console.error(error);
+      }
     } else {
       toast.error('Please fix the errors in the form');
     }
